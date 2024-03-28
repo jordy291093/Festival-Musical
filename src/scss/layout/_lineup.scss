@@ -1,0 +1,80 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v; 
+
+.lineup {
+    background-color: v.$rojo;
+    padding: 5rem 0;
+
+    h3, p {
+        text-align: center;
+        color: v.$blanco;
+    }
+    .dia {
+        text-transform: uppercase;
+    }
+}
+
+.escenarios-contenedor {
+    @include m.tablet {
+        @include m.grid(3, 5rem);
+    }
+    p {
+        color: v.$negro;
+    }
+}
+
+.escenario {
+    padding-top: 2rem;
+
+    p {
+        &:after {
+            content: '';
+            display: block;
+            width: 10rem;
+            height: 5rem;
+            background-size: 5rem;
+            background-repeat: no-repeat;
+            background-position: center center;
+            margin: 2rem auto 0 auto;
+        }
+    }
+}
+.electro .dia:after {
+    background-image: url(../img/auriculares.png);
+}
+
+.banda .dia:after {
+    background-image: url(../img/ondas-sonoras.png);
+}
+
+.calendario {
+    @include m.resetear-lista;
+    li {
+        padding: 2.5rem;
+        font-weight: 700;
+        text-align: center;
+        span {
+            font-weight: 400;
+        }
+    }
+}
+
+.bg-verde {
+    background-color: v.$verde2;
+    li:nth-child(odd) {
+        background-color: darken(v.$verde2, 5%);
+    }
+}
+.bg-blanco {
+    background-color: v.$blanco;
+    li:nth-child(odd) {
+        background-color: darken(v.$blanco, 15%);
+    }
+}
+.bg-rojo {
+    background-color: v.$rojo;
+}
+.bg-mexico {
+    background: rgb(0,99,65);
+    background: linear-gradient(90deg, rgba(0,99,65,0.4) 0%, rgba(255,255,255,0.4) 50%, rgba(200,16,46,0.4) 100%);
+}
